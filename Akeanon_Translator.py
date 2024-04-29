@@ -33,7 +33,7 @@ async def app():
     if selected_show:  # Check if user selected something
         if selected_show == "English to Akeanon":
             task = "translate to akeanon:"
-        elif selected_show == "Option 2":
+        elif selected_show == "Akeanon to English":
             task = "translate to enlish:"
 
     # Text input for user question
