@@ -1,6 +1,6 @@
 import streamlit as st
 import openai
-
+import pandas as pd
 
 from openai import AsyncOpenAI
 from openai import OpenAI
@@ -21,7 +21,23 @@ async def generate_response(question, context):
     return completion.choices[0].message.content
 
 async def app():
-    st.subheader("Akeanon-English / English Akeanon Translator")
+    st.subheader("Translect: Akeanon-English / English Akeanon Translator")
+
+    text = """Prof. Louie F. Cervantes, M. Eng. (Information Engineering) \n
+    CCS 229 - Intelligent Systems
+    Department of Computer Science
+    College of Information and Communications Technology
+    West Visayas State University
+    """
+    st.write(text)
+
+    text = """This is a simple translator that translates English to Akeanon and vice versa.
+    The app is based on a research project to develop a mobile tranlation app for various Visayan languages."""
+    st.write(text)
+    df = pd.read_csv("akeanon-sentences.csv", header=0)
+
+    with st.expander("Click to display the training dataset"):
+        st.write(df)
 
     # Define the options for the show selection
     show_options = ["English to Akeanon", "Akeanon to English"]
