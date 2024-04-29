@@ -27,7 +27,7 @@ async def app():
     show_options = ["English to Akeanon", "Akeanon to English"]
 
     # Use st.selectbox to create the show option box
-    selected_show = st.selectbox("Select the Task", show_options)
+    selected_show = st.selectbox("Select the translation task", show_options)
 
     # Process the selected option
     if selected_show:  # Check if user selected something
